@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "name": "curve",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/models/track.test.js && mocha test/scripts/importTracks.test.js"
+  },  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "esm": "^3.2.25",
+    "read-excel-file": "^5.7.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "chai": "^4.4.1",
+    "chai-http": "^4.4.0",
+    "mocha": "^10.3.0",
+    "mongoose": "^8.2.3",
+    "sinon": "^17.0.1"
+  }
+}
