@@ -1,13 +1,20 @@
-# Trackify
-Trackify is a tool designed to import track data from Excel files into a MongoDB database. It is built with Node.js and MongoDB, and it provides a convenient way to import track information such as title, artist, ISRC, and more from Excel spreadsheets.
+## Trackify
 
-## Features
+### Overview
 
-- Import track data from Excel files into MongoDB
-- Handle required fields and error logging
-- Support for associating tracks with contracts
+Trackify is a Node.js script designed to streamline the process of ingesting data from a spreadsheet into a MongoDB database. It offers a structured solution that adheres to the outlined requirements, ensuring efficient data management and validation.
 
-## Directory Structure
+### Key Features
+
+- **MongoDB Integration**: Utilizes Mongoose to establish a connection with MongoDB, facilitating seamless data storage and retrieval.
+- **Model Definition**: Defines Mongoose models for tracks and contracts based on the specified fields provided in the `Models and Fields.xlsx` spreadsheet.
+- **Data Parsing**: Parses the provided spreadsheet (`Track Import Test.xlsx`) to extract relevant information for import.
+- **Data Transformation**: Splits aliases on semi-colons and handles contract associations according to defined rules.
+- **Error Handling**: Identifies and logs errors encountered during the import process, providing line numbers and specific issues for easy troubleshooting.
+- **Testing Framework**: Employs Mocha as the testing framework along with Chai for assertions to ensure script functionality and reliability.
+- **Clear Project Structure**: Organizes files and directories in a logical manner to enhance code readability and maintainability.
+
+### Project Structure
 
 ```
 .
@@ -15,68 +22,54 @@ Trackify is a tool designed to import track data from Excel files into a MongoDB
 ├── models
 │   ├── contract.js
 │   └── track.js
+├── runImport.js
 ├── scripts
 │   └── importTracks.js
 └── test
-    ├── models
-    │   └── track.test.js
-    └── scripts
-        └── importTracks.test.js
-├── runImport.js
-├── package-lock.json
-├── package.json
+    ├── scripts
+    │   └── importTracks.test.js
+    └── models
+        └── track.test.js
+├── README.md
 ├── Models and Fields.xlsx
 ├── Track Import Test.xlsx
-├── README.md
+├── package.json
+├── package-lock.json
 ```
 
-## Installation
+### File Descriptions
 
-1. Clone the repository:
+- **database.js**: Module responsible for establishing a connection with the MongoDB database.
+- **models**: Directory housing Mongoose models for tracks and contracts.
+  - **contract.js**: Defines the schema and model for contracts.
+  - **track.js**: Defines the schema and model for tracks.
+- **package.json**: Configuration file specifying project dependencies and scripts.
+- **package-lock.json**: Auto-generated file detailing the exact dependency tree.
+- **runImport.js**: Entry point for executing the data import process.
+- **scripts**: Directory containing scripts related to data import.
+  - **importTracks.js**: Script responsible for parsing the spreadsheet and importing data into the database.
+- **test**: Directory containing test files for script validation.
+  - **scripts**: Directory housing tests for data import scripts.
+    - **importTracks.test.js**: Test suite validating the functionality of the `importTracks` script.
+  - **models**: Directory containing tests for Mongoose models.
+    - **track.test.js**: Test suite verifying the integrity of the track model.
+- **Models and Fields.xlsx**: Spreadsheet containing the fields required for defining Mongoose models.
+- **Track Import Test.xlsx**: Sample spreadsheet used for testing the import process.
 
-   ```bash
-   git clone https://github.com/your-username/Trackify.git
-   ```
+### Installation and Usage
 
-2. Install dependencies:
+1. **Clone Repository**: Clone the repository to your local machine using the command `git clone https://github.com/your-username/track-importer.git`.
+2. **Navigate to Directory**: Access the project directory by running `cd track-importer`.
+3. **Install Dependencies**: Install project dependencies by executing `npm install`.
+4. **Set Environment Variables**: Create a `.env` file in the root directory and specify the MongoDB connection string as `DB_CONNECTION=your_mongodb_connection_string`.
+5. **Install Development Dependencies**: Install additional development dependencies required for testing by running `npm install --save-dev @babel/register mocha chai sinon xlsx`.
+6. **Run Tests**: Execute tests using the command `npx mocha --require @babel/register ./test/scripts/importTracks.test.js`.
+7. **Run Import Process**: Initiate the import process with `node runImport.js`.
+8. **Monitor Output**: Monitor the console for any errors or logs generated during the import process.
 
-   ```bash
-   cd Trackify
-   npm install
-   ```
+### Dependencies
 
-3. Set up environment variables:
-
-   Create a `.env` file in the root directory and add the following variables:
-
-   ```plaintext
-   DB_CONNECTION=your_mongodb_connection_string
-   ```
-
-## Usage
-
-1. Prepare your Excel file:
-
-   Ensure your Excel file has the following columns: Title, Version, Artist, ISRC, PLine, Aliases. Save the file in the desired location.
-
-2. Run the importer:
-
-   ```bash
-   node runImport.js
-   ```
-
-3. Monitor the import:
-
-   The importer will log the progress of the import process, including any errors encountered during the import.
-
-4. Verify the imported data:
-
-   Once the import process is complete, you can verify the imported data in your MongoDB database.
-
-## Contributing
-
-Contributions are welcome! If you find any issues or have suggestions for improvement, feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+*   **@babel/register**: Enables the use of ES modules in Node.js.
+*   **mocha**: Testing framework.
+*   **chai**: Assertion library.
+*   **sinon**: Test spies, stubs, and mocks.
