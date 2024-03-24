@@ -122,10 +122,10 @@ npm install
 Create a `.env` file in the root directory of the project and add the following environment variables:
 
 ```plaintext
-DB_CONNECTION=your_mongodb_connection_string
+DB_CONNECTION=mongodb://localhost:27017/track_import_db
 ```
 
-Replace `your_mongodb_connection_string` with your actual MongoDB connection string.
+Replace `track_import_db` with your actual MongoDB connection string.
 
 ### 7. Create a MongoDB Database
 
