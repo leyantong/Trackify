@@ -67,7 +67,7 @@ Certainly! Here's how you can include instructions for creating a MongoDB databa
 Clone the repository to your local machine using Git:
 
 ```bash
-git clone https://github.com/your-username/track-importer.git
+git clone https://github.com/your-username/Trackify.git
 ```
 
 ### 2. Navigate to the Project Directory
@@ -75,7 +75,7 @@ git clone https://github.com/your-username/track-importer.git
 Navigate into the project directory:
 
 ```bash
-cd track-importer
+cd Trackify
 ```
 
 ### 3. Install Node.js and npm
