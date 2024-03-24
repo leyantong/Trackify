@@ -58,8 +58,8 @@ Trackify is a Node.js script designed to streamline the process of ingesting dat
 
 ### Installation and Usage
 
-1. **Clone Repository**: Clone the repository to your local machine using the command `git clone https://github.com/your-username/track-importer.git`.
-2. **Navigate to Directory**: Access the project directory by running `cd track-importer`.
+1. **Clone Repository**: Clone the repository to your local machine using the command `git clone https://github.com/your-username/Trackify.git`.
+2. **Navigate to Directory**: Access the project directory by running `cd Trackify`.
 3. **Install Dependencies**: Install project dependencies by executing `npm install`.
 4. **Set Environment Variables**: Create a `.env` file in the root directory and specify the MongoDB connection string as `DB_CONNECTION=your_mongodb_connection_string`.
 5. **Install Development Dependencies**: Install additional development dependencies required for testing by running `npm install --save-dev @babel/register mocha chai sinon xlsx`.
