@@ -151,3 +151,58 @@ npm install --save-dev @babel/register mocha chai sinon
 
 This command installs Babel for ES module support, Mocha for testing, Chai for assertions, and Sinon for test doubles.
 
+
+## Usage
+
+### Running the Script
+
+To run the script file for importing tracks, follow these steps:
+
+1. Make sure you have completed the setup steps mentioned in the README.
+2. Open your terminal or command prompt.
+3. Navigate to the project directory.
+4. Run the script using Node.js:
+
+```bash
+node runImport.js
+```
+
+This command will execute the script file `runImport.js`, which internally imports tracks from the Excel file into the MongoDB database.
+
+### Running Tests
+
+1.  Navigate to the project directory in your terminal.
+2.  Run the following command to execute the tests:
+
+bashCopy code
+
+`npm test`
+
+This command will run both model tests and script tests.
+
+
+### Running Individual Tests
+
+If you want to run specific test files or individual tests within a file, you can specify the path to the desired test file or use the `grep` option to filter tests by name:
+
+```bash
+# Run tests in a specific file
+npx mocha --require @babel/register test/scripts/importTracks.test.js
+
+# Run tests matching a specific pattern
+npx mocha --require @babel/register --grep "should import tracks"
+```
+
+Replace `"should import tracks"` with the name of the test or pattern you want to match.
+
+Contributors
+------------
+
+*   [Leyan Tong](https://github.com/leyantong)
+
+License
+-------
+
+This project is licensed under the MIT License.
+
+
