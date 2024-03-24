@@ -56,10 +56,6 @@ Trackify is a Node.js script designed to streamline the process of ingesting dat
 - **Models and Fields.xlsx**: Spreadsheet containing the fields required for defining Mongoose models.
 - **Track Import Test.xlsx**: Sample spreadsheet used for testing the import process.
 
-Certainly! Here's how you can include instructions for creating a MongoDB database:
-
----
-
 ## Installation
 
 ### 1. Clone the Repository
